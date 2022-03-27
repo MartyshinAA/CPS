@@ -1,0 +1,458 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Убрираем отступы, похоже на костыль. */
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: local('TT Lakes Medium'), local('/fonts/TTLakes/TTLakes-Medium'),
+    url('/fonts/TTLakes/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/TTLakes/TTLakes-Medium.woff2') format('woff2'),
+    url('/fonts/TTLakes/TTLakes-Medium.woff') format('woff'),
+    url('/fonts/TTLakes/TTLakes-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Condensed';
+  src: local('/fonts/TTLakes/TT Lakes Condensed Bold'),
+    local('/fonts/TTLakes/TTLakesCondensed-Bold'),
+    url('/fonts/TTLakes/TTLakesCondensed-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/TTLakes/TTLakesCondensed-Bold.woff2') format('woff2'),
+    url('/fonts/TTLakes/TTLakesCondensed-Bold.woff') format('woff'),
+    url('/fonts/TTLakes/TTLakesCondensed-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  background-color: #f8f8f8;
+  font-family: 'TT Lakes';
+}
+
+.header-menu {
+  display: flex;
+  width: 100%;
+  height: 88px;
+  border: none;
+  align-items: center;
+}
+
+.header-menu__column {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-menu__icons {
+  width: 40px;
+  height: 40px;
+  background-color: #ff3e79 !important;
+  border-radius: 50%;
+  border: none;
+}
+
+.header-menu__icon-burger-menu {
+  background: url('images/decorate/css_sprites.png') -117px -76px;
+}
+
+.header-menu__logo {
+  height: 52px;
+  width: 98px;
+  background: url('images/decorate/header-menu/header-menu__logo/logo.png')
+    no-repeat;
+}
+
+.header-menu__divider {
+  align-self: center;
+  position: relative;
+  width: 2px;
+  height: 32px;
+  background: #eaeaea;
+  border-radius: 1px;
+}
+
+.header-menu__icon-call {
+  background: url('images/decorate/css_sprites.png') 197px 75px;
+}
+
+.header-menu__icon-chat {
+  background: url('images/decorate/css_sprites.png') 0px 1px;
+}
+
+.header-menu__icon-profile {
+  background: url('images/decorate/css_sprites.png') 0px -41px;
+}
+
+.header-menu__divider-2 {
+  align-self: center;
+  position: relative;
+  width: 2px;
+  height: 32px;
+  background: #eaeaea;
+  border-radius: 1px;
+}
+
+.header-menu__icon-repair {
+  background: url('images/decorate/css_sprites.png') -40px 0px;
+}
+
+.header-menu__icon-check-status {
+  background: url('images/decorate/css_sprites.png') -78px -38px;
+}
+
+.page-title {
+  display: flex;
+}
+
+.page-title__highlight {
+  height: 40px;
+  width: 4px;
+  background: #41f6d7;
+  border-radius: 0 4px 4px 0;
+}
+
+.page-title__headline {
+  font-family: TT Lakes Condensed;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+
+.site-navigation-list {
+  align-items: baseline;
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  overflow-y: scroll;
+  letter-spacing: -0.1px;
+}
+
+.site-navigation-list label {
+  font-size: 16px;
+  margin-left: 16px;
+  padding: 6px 12px;
+}
+
+.site-navigation-list__label-devices--active {
+  border: 2px solid #b8ffec;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.content-first-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-first-page__container-excerpt {
+  flex: 1 1 50%;
+}
+
+.content-first-page__excerpt {
+  font-size: 14px;
+  overflow: hidden;
+  line-height: 20px;
+}
+
+.content-first-page-label__read-more {
+  letter-spacing: 0.1px;
+  display: flex;
+}
+
+.content-first-page-label__img-read-more {
+  flex-shrink: 1;
+  width: 8px;
+  height: 11px;
+  background: url('/images/decorate/css_sprites.png') -76px -88px;
+}
+
+.content-first-page-label__text-read-more {
+  margin-left: 15px;
+  letter-spacing: -0.1px;
+}
+
+.content-first-page__container-img {
+  flex: 1 1 50%;
+}
+
+.content-first-page__signboard-photo {
+  width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .header-menu {
+    justify-content: space-evenly;
+  }
+
+  .header-menu__column-1 {
+    justify-content: space-between;
+    margin-left: -4px;
+    flex-basis: 48%;
+  }
+
+  .header-menu__column-2 {
+    justify-content: space-between;
+    margin-right: -3px;
+    flex-basis: 35%;
+  }
+
+  .header-menu__divider {
+    display: none;
+  }
+
+  .header-menu__icon-call {
+    display: none;
+  }
+
+  .header-menu__icon-chat {
+    display: none;
+  }
+  
+  .header-menu__icon-profile {
+    display: none;
+  }
+
+  .site-navigation-list {
+    margin-top: 3px;
+    margin-left: 1px;
+  }
+
+  .page-title__highlight {
+    margin-top: 25px;
+  }
+
+  .page-title__headline {
+    margin: 24px 16px 24px 12px;
+  }
+
+  .content-first-page {
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+
+  .content-first-page__excerpt {
+    margin: 0 16px;
+    padding-top: 26px;
+    line-height: 18px;
+    height: 115px;
+  }
+
+  .content-first-page-label__read-more {
+    margin-top: 17px;
+    margin-bottom: 1px;
+  }
+
+  .content-first-page-label__img-read-more {
+    margin: 6px 0 0 24px;
+  }
+
+  .content-first-page__signboard-photo {
+    margin: 15px 0;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 769px) {
+  .header-menu {
+    justify-content: space-between;
+  }
+
+  .header-menu__column-1 {
+    margin-left: 24px;
+    flex-basis: 23%;
+    justify-content: space-between;
+  }
+
+  .header-menu__column-2 {
+    margin-right: 24px;
+    flex-basis: 38%;
+    justify-content: space-between;
+  }
+
+  .main-container {
+    margin: 0 24px;
+  }
+
+  .page-title {
+    margin-left: -24px;
+    padding-top: 23px;
+  }
+
+  .page-title__headline {
+    margin: 2px 16px 24px 21px;
+  }
+
+  .site-navigation-list {
+    margin: 10px 0 0 -16px;
+  }
+
+  .site-navigation-list label {
+    padding: 6px 14px;
+  }
+
+  .content-first-page {
+    margin-top: 34px;
+  }
+
+  .content-first-page__container-excerpt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-first-page__excerpt {
+    flex-basis: 59%;
+    margin-right: 50px;
+  }
+
+  .content-first-page-label__img-read-more {
+    margin: 16px 0 0 9px;
+  }
+
+  .content-first-page-label__text-read-more {
+    margin: 10px 0 0 16px;
+  }
+
+  .content-first-page__signboard-photo {
+    border-radius: 6px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  body {
+    background-color: #f8f8f8;
+  }
+
+  .header-menu {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .header-menu__icons {
+    position: relative;
+    font-size: 16px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    top: -6px;
+    justify-content: flex-end;
+  }
+
+  .header-menu__icon-burger-menu {
+    display: none;
+  }
+
+  .header-menu__logo {
+    display: none;
+  }
+
+  .header-menu__divider {
+    display: none;
+  }
+
+  .header-menu__icon-call {
+    display: none;
+  }
+
+  .header-menu__icon-chat {
+    display: none;
+  }
+
+  .header-menu__icon-profile {
+    display: none;
+  }
+
+  .header-menu__divider-2 {
+    display: none;
+  }
+
+  .header-menu__icon-repair {
+    right: 191px;
+  }
+
+  .header-menu__icon-repair::before {
+    position: relative;
+    content: 'Оставить заявку';
+    right: 44px;
+  }
+  
+  .header-menu__icon-check-status {
+    right: 31px;
+  }
+  
+  .header-menu__icon-check-status::before {
+    position: relative;
+    content: 'Статус ремонта';
+    right: 44px;
+  }
+
+  .page-title {
+    margin-top: -46px;
+  }
+
+  .page-title__headline {
+    margin: 0 0 12px 30px;
+  }
+
+  .site-navigation-list {
+    flex-wrap: wrap;
+    margin-left: 25px;
+  }
+
+  .site-navigation-list label {
+    margin-bottom: 10px;
+  }
+
+  .content-first-page__container-excerpt {
+    flex-basis:50%;
+    justify-content: flex-start;
+  }
+
+  .content-first-page__container-img {
+    flex-basis: 50%;
+    justify-content: flex-end;
+  }
+
+  .content-first-page__excerpt {
+    margin-left: 35px;
+    margin-top: 5px;
+    letter-spacing: 0.1px;
+    flex-basis: 50%;
+    max-width: 88%;
+  }
+
+  .content-first-page-label__read-more {
+    margin: 14px 0 0 41px;
+  }
+
+  .content-first-page-label__img-read-more {
+    margin-top: 6px;
+  }
+
+  .content-first-page__signboard-photo {
+    border-radius: 6px;
+  }
+}
