@@ -9,6 +9,10 @@ html {
 
 /* Убрираем отступы, похоже на костыль. */
 
+body {
+  margin: 0;
+}
+
 @font-face {
   font-family: 'TT Lakes';
   src: local('TT Lakes Medium'), local('/fonts/TTLakes/TTLakes-Medium'),
@@ -33,6 +37,8 @@ html {
   font-style: normal;
 }
 
+/* Скрываем дефолтные кнопки */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -44,16 +50,27 @@ html {
   overflow: hidden;
 }
 
-body {
-  margin: 0;
+/* ----------------------------- */
+
+/* Скрываем дефолтные стрелки-треугольники в details*/
+
+details summary::-webkit-details-marker {
+  display: none;
 }
+
+summary {
+  display: block;
+}
+
+/* ----------------------------- */
+
 
 main {
   background-color: #f8f8f8;
   font-family: 'TT Lakes';
 }
 
-.header-menu {
+.menu {
   display: flex;
   width: 100%;
   height: 88px;
@@ -61,13 +78,13 @@ main {
   align-items: center;
 }
 
-.header-menu__column {
+.menu__column {
   align-items: center;
   display: flex;
   flex-wrap: nowrap;
 }
 
-.header-menu__icons {
+.menu__icons {
   width: 40px;
   height: 40px;
   background-color: #ff3e79 !important;
@@ -75,18 +92,18 @@ main {
   border: none;
 }
 
-.header-menu__icon-burger-menu {
+.menu__icon-burger-menu {
   background: url('images/decorate/css_sprites.png') -117px -76px;
 }
 
-.header-menu__logo {
+.menu__logo {
   height: 52px;
   width: 98px;
-  background: url('images/decorate/header-menu/header-menu__logo/logo.png')
+  background: url('images/decorate/menu/menu__logo/logo.png')
     no-repeat;
 }
 
-.header-menu__divider {
+.menu__divider {
   align-self: center;
   position: relative;
   width: 2px;
@@ -95,19 +112,19 @@ main {
   border-radius: 1px;
 }
 
-.header-menu__icon-call {
+.menu__icon-call {
   background: url('images/decorate/css_sprites.png') 197px 75px;
 }
 
-.header-menu__icon-chat {
+.menu__icon-chat {
   background: url('images/decorate/css_sprites.png') 0px 1px;
 }
 
-.header-menu__icon-profile {
+.menu__icon-profile {
   background: url('images/decorate/css_sprites.png') 0px -41px;
 }
 
-.header-menu__divider-2 {
+.menu__divider-2 {
   align-self: center;
   position: relative;
   width: 2px;
@@ -116,11 +133,11 @@ main {
   border-radius: 1px;
 }
 
-.header-menu__icon-repair {
+.menu__icon-repair {
   background: url('images/decorate/css_sprites.png') -40px 0px;
 }
 
-.header-menu__icon-check-status {
+.menu__icon-check-status {
   background: url('images/decorate/css_sprites.png') -78px -38px;
 }
 
@@ -143,22 +160,34 @@ main {
   letter-spacing: 1.3px;
 }
 
-.site-navigation-list {
+ ul {
+   margin: 0;
+   padding: 0;
+ }
+
+.site-navigation-list__items {
   align-items: baseline;
+  position: relative;
+  padding: 2px 0;
   display: flex;
   white-space: nowrap;
-  position: relative;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  list-style-type: none;
+  align-items: center;
   letter-spacing: -0.1px;
+  
 }
 
-.site-navigation-list label {
-  font-size: 16px;
-  margin-left: 16px;
-  padding: 6px 12px;
+.site-navigation-list__item {
+  padding: 8px 0px;
+  margin-left: 20px;
 }
 
-.site-navigation-list__label-devices--active {
+.site-navigation-list__item span {
+  padding: 8px;
+}
+
+.site-navigation-list__span-devices--active {
   border: 2px solid #b8ffec;
   border-radius: 6px;
   background: #ffffff;
@@ -166,34 +195,42 @@ main {
 
 .content-first-page {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .content-first-page__container-excerpt {
+  font-size: 14px;
+  line-height: 20px;
   flex: 1 1 50%;
 }
 
 .content-first-page__excerpt {
-  font-size: 14px;
   overflow: hidden;
-  line-height: 20px;
 }
 
-.content-first-page-label__read-more {
-  letter-spacing: 0.1px;
-  display: flex;
+details[open] .content-first-page__img-read-more, 
+details[open] .content-first-page__text-read-more {
+  display: none;
 }
 
-.content-first-page-label__img-read-more {
-  flex-shrink: 1;
+details[open] .content-first-page__excerpt {
+  overflow: none;
+  height: 100%;
+}
+
+.content-first-page__img-read-more {
+  display: inline-block;
   width: 8px;
   height: 11px;
   background: url('images/decorate/css_sprites.png') -76px -88px;
 }
 
-.content-first-page-label__text-read-more {
+.content-first-page__text-read-more:before {
+  content: "Читать далее";
+  font-size: 16px;
+  display: inline-block;
   margin-left: 15px;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.3px;
 }
 
 .content-first-page__container-img {
@@ -205,41 +242,33 @@ main {
 }
 
 @media screen and (max-width: 320px) {
-  .header-menu {
-    justify-content: space-evenly;
+
+  .menu__column {
+    justify-content:space-evenly;
   }
 
-  .header-menu__column-1 {
-    justify-content: space-between;
-    margin-left: -4px;
-    flex-basis: 48%;
+  .menu__column-1 {
+    flex-basis:58%;
   }
 
-  .header-menu__column-2 {
-    justify-content: space-between;
-    margin-right: -3px;
-    flex-basis: 35%;
+  .menu__column-2 {
+    flex-basis:40%;
   }
 
-  .header-menu__divider {
+  .menu__divider {
     display: none;
   }
 
-  .header-menu__icon-call {
+  .menu__icon-call {
     display: none;
   }
 
-  .header-menu__icon-chat {
+  .menu__icon-chat {
     display: none;
   }
   
-  .header-menu__icon-profile {
+  .menu__icon-profile {
     display: none;
-  }
-
-  .site-navigation-list {
-    margin-top: 3px;
-    margin-left: 1px;
   }
 
   .page-title__highlight {
@@ -251,46 +280,50 @@ main {
   }
 
   .content-first-page {
-    flex-direction: column;
+    flex-direction:column;
     flex-basis: 100%;
   }
 
-  .content-first-page__excerpt {
+  .content-first-page__container-excerpt {
     margin: 0 16px;
-    padding-top: 26px;
+    padding-top: 25px;
     line-height: 18px;
-    height: 115px;
+  }
+  
+  .content-first-page__excerpt {
+    overflow: hidden;
+    margin-bottom: -8px;
+    height: 98px;
   }
 
-  .content-first-page-label__read-more {
-    margin-top: 17px;
-    margin-bottom: 1px;
-  }
-
-  .content-first-page-label__img-read-more {
-    margin: 6px 0 0 24px;
+  .content-first-page__img-read-more {
+    margin-top: 22px;
+    margin-left: 8px;
   }
 
   .content-first-page__signboard-photo {
-    margin: 15px 0;
+    margin-top: 17px;
   }
 }
 
 @media screen and (min-width: 321px) and (max-width: 769px) {
-  .header-menu {
+
+  .menu {
     justify-content: space-between;
   }
 
-  .header-menu__column-1 {
-    margin-left: 24px;
-    flex-basis: 23%;
-    justify-content: space-between;
+  .menu__column {
+    justify-content:space-around;
   }
 
-  .header-menu__column-2 {
-    margin-right: 24px;
-    flex-basis: 38%;
-    justify-content: space-between;
+  .menu__column-1 {
+    margin-left: 14px;
+    flex-basis: 26%;
+  }
+
+  .menu__column-2 {
+    margin-right: 17px;
+    flex-basis: 40%;
   }
 
   .main-container {
@@ -310,30 +343,21 @@ main {
     margin: 10px 0 0 -16px;
   }
 
-  .site-navigation-list label {
-    padding: 6px 14px;
-  }
-
   .content-first-page {
-    margin-top: 34px;
-  }
-
-  .content-first-page__container-excerpt {
-    display: flex;
-    flex-direction: column;
+    margin-top: 30px;
   }
 
   .content-first-page__excerpt {
-    flex-basis: 59%;
     margin-right: 50px;
+    height: 159px;
   }
 
-  .content-first-page-label__img-read-more {
+  .content-first-page__img-read-more {
     margin: 16px 0 0 9px;
   }
 
-  .content-first-page-label__text-read-more {
-    margin: 10px 0 0 16px;
+  .content-first-page__text-read-more {
+    margin: 10px 0 0 -2px;
   }
 
   .content-first-page__signboard-photo {
@@ -342,16 +366,17 @@ main {
 }
 
 @media screen and (min-width: 770px) {
+
   body {
     background-color: #f8f8f8;
   }
 
-  .header-menu {
+  .menu {
     justify-content: flex-end;
     align-items: flex-end;
   }
 
-  .header-menu__icons {
+  .menu__icons {
     position: relative;
     font-size: 16px;
     white-space: nowrap;
@@ -361,49 +386,49 @@ main {
     justify-content: flex-end;
   }
 
-  .header-menu__icon-burger-menu {
+  .menu__icon-burger-menu {
     display: none;
   }
 
-  .header-menu__logo {
+  .menu__logo {
     display: none;
   }
 
-  .header-menu__divider {
+  .menu__divider {
     display: none;
   }
 
-  .header-menu__icon-call {
+  .menu__icon-call {
     display: none;
   }
 
-  .header-menu__icon-chat {
+  .menu__icon-chat {
     display: none;
   }
 
-  .header-menu__icon-profile {
+  .menu__icon-profile {
     display: none;
   }
 
-  .header-menu__divider-2 {
+  .menu__divider-2 {
     display: none;
   }
 
-  .header-menu__icon-repair {
+  .menu__icon-repair {
     right: 191px;
   }
 
-  .header-menu__icon-repair::before {
+  .menu__icon-repair::before {
     position: relative;
     content: 'Оставить заявку';
     right: 44px;
   }
   
-  .header-menu__icon-check-status {
+  .menu__icon-check-status {
     right: 31px;
   }
   
-  .header-menu__icon-check-status::before {
+  .menu__icon-check-status::before {
     position: relative;
     content: 'Статус ремонта';
     right: 44px;
@@ -418,29 +443,30 @@ main {
   }
 
   .site-navigation-list {
-    flex-wrap: wrap;
     margin-left: 25px;
   }
+  
+  .site-navigation-list__items {
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
 
-  .site-navigation-list label {
-    margin-bottom: 10px;
+  .site-navigation-list__item {
+    margin-bottom: 8px;
   }
 
   .content-first-page__container-excerpt {
-    flex-basis:50%;
     justify-content: flex-start;
   }
 
   .content-first-page__container-img {
-    flex-basis: 50%;
     justify-content: flex-end;
   }
 
   .content-first-page__excerpt {
     margin-left: 35px;
-    margin-top: 5px;
+    margin-top: 2px;
     letter-spacing: 0.1px;
-    flex-basis: 50%;
     max-width: 88%;
   }
 
@@ -448,8 +474,8 @@ main {
     margin: 14px 0 0 41px;
   }
 
-  .content-first-page-label__img-read-more {
-    margin-top: 6px;
+  .content-first-page__img-read-more {
+    margin: 19px 0 0 41px;
   }
 
   .content-first-page__signboard-photo {

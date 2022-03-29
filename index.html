@@ -9,35 +9,35 @@
   </head>
   <body>
     <header>
-      <div class="header-menu">
-        <div class="header-menu__column header-menu__column-1">
+      <div class="menu">
+        <div class="menu__column menu__column-1">
           <button
-            class="header-menu__icons header-menu__icon-burger-menu"
+            class="menu__icons menu__icon-burger-menu"
           ></button>
-          <div class="header-menu__divider"></div>
-          <div class="header-menu__logo"></div>
+          <div class="menu__divider"></div>
+          <div class="menu__logo"></div>
         </div>
-        <div class="header-menu__column header-menu__column-2">
+        <div class="menu__column menu__column-2">
           <button
-            class="header-menu__icons header-menu__icon-call"
-            name="header-menu__icon-call"
+            class="menu__icons menu__icon-call"
+            name="menu__icon-call"
           ></button>
           <button
-            class="header-menu__icons header-menu__icon-chat"
-            name="header-menu__icon-chat"
+            class="menu__icons menu__icon-chat"
+            name="menu__icon-chat"
           ></button>
           <button
-            class="header-menu__icons header-menu__icon-profile"
+            class="menu__icons menu__icon-profile"
             name="menu__icon-profile"
           ></button>
-          <div class="header-menu__divider-2"></div>
+          <div class="menu__divider-2"></div>
           <button
-            class="header-menu__icons header-menu__icon-repair"
-            name="header-menu__icon-repair"
+            class="menu__icons menu__icon-repair"
+            name="menu__icon-repair"
           ></button>
           <button
-            class="header-menu__icons header-menu__icon-check-status"
-            name="header-menu__icon-check-status"
+            class="menu__icons menu__icon-check-status"
+            name="menu__icon-check-status"
           ></button>
         </div>
       </div>
@@ -49,79 +49,80 @@
         <div class="page-title__headline">Услуги и сервисы</div>
       </div>
       <nav class="site-navigation-list">
-        <label class="site-navigation-list__label-devices--active devices">
-          <button
-            class="visually-hidden site-navigation-list__button-devices"
-            name="devices"
-          ></button>
-          <span class="site-navigation-list__span-devices"
-            >Ремонтируемые устройства</span
-          >
-        </label>
-        <label class="site-navigation-list__label-additional-services additional-services">
-          <button
-            class="visually-hidden site-navigation-list__button-additional-services"
-            name="additional-services"
-          ></button>
-          <span class="site-navigation-list__span-additional-services"
-            >Дополнительные услуги</span
-          >
-        </label>
-        <label class="site-navigation-list__label-price-list price-list">
-          <button
-            class="visually-hidden site-navigation-list__button-price-list"
-            name="price-list"
-          ></button>
-          <span class="site-navigation-list__span-price-list"
-            >Цены на услуги</span
-          >
-        </label>
-        <label class="site-navigation-list__label-special-prices">
-          <button
-            class="visually-hidden site-navigation-list__button-special-prices special-prices"
-            name="special-prices"
-          ></button>
-          <span class="site-navigation-list__span-special-prices"
-            >Специальные цены</span
-          >
-        </label>
-        <label class="site-navigation-list__label-service-center-adresses service-center-adresses">
-          <button
-            class="visually-hidden site-navigation-list__button-service-center-adresses"
-            name="service-center-adresses"
-          ></button>
-          <span class="site-navigation-list__span-center-adresses"
-            >Адреса сервисных центров</span
-          >
-        </label>
-        <label class="site-navigation-list__label-reviews reviews">
-          <button
-            class="visually-hidden site-navigation-list__button-reviews"
-            name="reviews"
-          ></button>
-          <span class="site-navigation-list__span-reviews">Отзывы</span>
-        </label>
+        <ul class="site-navigation-list__items">
+          <li class="site-navigation-list__item">
+          <!-- <label class="site-navigation-list__label-devices--active devices"> -->
+            <button
+              class="visually-hidden site-navigation-list__button-devices"
+              name="devices"
+            ></button>
+            <span class="site-navigation-list__span-devices--active"
+              >Ремонтируемые устройства</span
+              >
+            <!-- </label> -->
+          </li>
+          <li class="site-navigation-list__item">
+              <button
+                class="visually-hidden site-navigation-list__button-additional-services"
+                name="additional-services"
+              ></button>
+              <span class="site-navigation-list__span-additional-services"
+                >Дополнительные услуги</span
+              >
+          </li>
+          <li class="site-navigation-list__item">
+              <button
+                class="visually-hidden site-navigation-list__button-price-list"
+                name="price-list"
+              ></button>
+              <span class="site-navigation-list__span-price-list"
+                >Цены на услуги</span
+              >
+          </li>
+          <li class="site-navigation-list__item">
+              <button
+                class="visually-hidden site-navigation-list__button-special-prices special-prices"
+                name="special-prices"
+              ></button>
+              <span class="site-navigation-list__span-special-prices"
+                >Специальные цены</span
+              >
+          </li>
+          <li class="site-navigation-list__item">
+              <button
+                class="visually-hidden site-navigation-list__button-service-center-adresses"
+                name="service-center-adresses"
+              ></button>
+              <span class="site-navigation-list__span-center-adresses"
+                >Адреса сервисных центров</span
+              >
+          </li>
+          <li class="site-navigation-list__item">
+              <button
+                class="visually-hidden site-navigation-list__button-reviews"
+                name="reviews"
+              ></button>
+              <span class="site-navigation-list__span-reviews">Отзывы</span>
+          </li>
+        </ul>
       </nav>
       <section class="content-first-page">
-        <div class="content-first-page__container-excerpt">
-        <div class="content-first-page__excerpt">
-          Мы являемся авторизованным сервисным центром по ремонту техники Dell.
-          Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
-          гарантией производителя.<br />
-          <br />
-          Мы успешно работаем с 1992 года и заслужили репутацию надежного
-          партнера, что подтверждает большое количество постоянных клиентов. Мы
-          гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
-          советуют нас родным и близким.
-        </div>
-        <label class="content-first-page-label__read-more">
-          <button
-            class="visually-hidden content-first-page-label__button-read-more"
-          ></button>
-          <span class="content-first-page-label__img-read-more"></span>
-          <span class="content-first-page-label__text-read-more">Читать далее</span>
-        </label>
-      </div>
+        <details class="content-first-page__container-excerpt">
+          <summary>
+            <div class="content-first-page__excerpt">
+            Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+            Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
+            гарантией производителя.<br>
+            <br>
+            Мы успешно работаем с 1992 года и заслужили репутацию надежного
+            партнера, что подтверждает большое количество постоянных клиентов. 
+            Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
+            советуют нас родным и близким.
+            </div>
+            <span class="content-first-page__img-read-more"></span>
+            <span class="content-first-page__text-read-more"></span>
+          </summary>
+        </details>
       <div class="content-first-page__container-img">
         <img
           class="content-first-page__signboard-photo signboard-photo"
