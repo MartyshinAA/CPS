@@ -244,15 +244,16 @@ details[open] .content-first-page__excerpt {
 @media screen and (max-width: 320px) {
 
   .menu__column {
-    justify-content:space-evenly;
+    justify-content:space-around;
   }
 
   .menu__column-1 {
-    flex-basis:58%;
+    flex-basis:53%;
+    margin-left: 9px;
   }
 
   .menu__column-2 {
-    flex-basis:40%;
+    flex-basis: 42%;
   }
 
   .menu__divider {
