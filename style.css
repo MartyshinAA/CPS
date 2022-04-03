@@ -1,5 +1,8 @@
+/*********************** Block 1.3 ***********************/
+
 html {
   box-sizing: border-box;
+  font-family: 'TT Lakes';
 }
 *,
 *:before,
@@ -64,10 +67,8 @@ summary {
 
 /* ----------------------------- */
 
-
-main {
+.main--block--4 {
   background-color: #f8f8f8;
-  font-family: 'TT Lakes';
 }
 
 .menu {
@@ -93,14 +94,13 @@ main {
 }
 
 .menu__icon-burger-menu {
-  background: url('images/decorate/css_sprites.png') -117px -76px;
+  background: url('images/decorate/css_sprites.png') -179px -76px;
 }
 
 .menu__logo {
   height: 52px;
   width: 98px;
-  background: url('images/decorate/menu/menu__logo/logo.png')
-    no-repeat;
+  background: url('images/decorate/menu/__logo/logo.png') no-repeat;
 }
 
 .menu__divider {
@@ -113,11 +113,11 @@ main {
 }
 
 .menu__icon-call {
-  background: url('images/decorate/css_sprites.png') 197px 75px;
+  background: url('images/decorate/css_sprites.png') 213px 118px;
 }
 
 .menu__icon-chat {
-  background: url('images/decorate/css_sprites.png') 0px 1px;
+  background: url('images/decorate/css_sprites.png') -39px 0px;
 }
 
 .menu__icon-profile {
@@ -134,11 +134,11 @@ main {
 }
 
 .menu__icon-repair {
-  background: url('images/decorate/css_sprites.png') -40px 0px;
+  background: url('images/decorate/css_sprites.png') 1px 0px;
 }
 
 .menu__icon-check-status {
-  background: url('images/decorate/css_sprites.png') -78px -38px;
+  background: url('images/decorate/css_sprites.png') 2px 40px;
 }
 
 .page-title {
@@ -160,31 +160,29 @@ main {
   letter-spacing: 1.3px;
 }
 
- ul {
-   margin: 0;
-   padding: 0;
- }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 .site-navigation-list__items {
   align-items: baseline;
   position: relative;
-  padding: 2px 0;
   display: flex;
   white-space: nowrap;
   overflow-x: scroll;
-  list-style-type: none;
   align-items: center;
   letter-spacing: -0.1px;
-  
+  margin-left: 8px;
 }
 
-.site-navigation-list__item {
-  padding: 8px 0px;
-  margin-left: 20px;
+.site-navigation-list__items li {
+  padding: 10px 8px;
 }
 
-.site-navigation-list__item span {
-  padding: 8px;
+.site-navigation-list__items span {
+  padding: 7px 12px;
 }
 
 .site-navigation-list__span-devices--active {
@@ -208,7 +206,7 @@ main {
   overflow: hidden;
 }
 
-details[open] .content-first-page__img-read-more, 
+details[open] .content-first-page__img-read-more,
 details[open] .content-first-page__text-read-more {
   display: none;
 }
@@ -222,11 +220,11 @@ details[open] .content-first-page__excerpt {
   display: inline-block;
   width: 8px;
   height: 11px;
-  background: url('images/decorate/css_sprites.png') -76px -88px;
+  background: url('images/decorate/css_sprites.png') -128px -10px;
 }
 
 .content-first-page__text-read-more:before {
-  content: "Читать далее";
+  content: 'Читать далее';
   font-size: 16px;
   display: inline-block;
   margin-left: 15px;
@@ -242,13 +240,12 @@ details[open] .content-first-page__excerpt {
 }
 
 @media screen and (max-width: 320px) {
-
   .menu__column {
-    justify-content:space-around;
+    justify-content: space-around;
   }
 
   .menu__column-1 {
-    flex-basis:53%;
+    flex-basis: 53%;
     margin-left: 9px;
   }
 
@@ -260,15 +257,15 @@ details[open] .content-first-page__excerpt {
     display: none;
   }
 
-  .menu__icon-call {
+  .menu__icon-call--block--4 {
     display: none;
   }
 
-  .menu__icon-chat {
+  .menu__icon-chat--block--4 {
     display: none;
   }
-  
-  .menu__icon-profile {
+
+  .menu__icon-profile--block--4 {
     display: none;
   }
 
@@ -281,7 +278,7 @@ details[open] .content-first-page__excerpt {
   }
 
   .content-first-page {
-    flex-direction:column;
+    flex-direction: column;
     flex-basis: 100%;
   }
 
@@ -290,7 +287,7 @@ details[open] .content-first-page__excerpt {
     padding-top: 25px;
     line-height: 18px;
   }
-  
+
   .content-first-page__excerpt {
     overflow: hidden;
     margin-bottom: -8px;
@@ -308,13 +305,12 @@ details[open] .content-first-page__excerpt {
 }
 
 @media screen and (min-width: 321px) and (max-width: 769px) {
-
   .menu {
     justify-content: space-between;
   }
 
   .menu__column {
-    justify-content:space-around;
+    justify-content: space-around;
   }
 
   .menu__column-1 {
@@ -367,7 +363,6 @@ details[open] .content-first-page__excerpt {
 }
 
 @media screen and (min-width: 770px) {
-
   body {
     background-color: #f8f8f8;
   }
@@ -387,11 +382,11 @@ details[open] .content-first-page__excerpt {
     justify-content: flex-end;
   }
 
-  .menu__icon-burger-menu {
+  .menu__icon-burger-menu--block--4 {
     display: none;
   }
 
-  .menu__logo {
+  .menu__logo--block--4 {
     display: none;
   }
 
@@ -399,15 +394,15 @@ details[open] .content-first-page__excerpt {
     display: none;
   }
 
-  .menu__icon-call {
+  .menu__icon-call--block--4 {
     display: none;
   }
 
-  .menu__icon-chat {
+  .menu__icon-chat--block--4 {
     display: none;
   }
 
-  .menu__icon-profile {
+  .menu__icon-profile--block--4 {
     display: none;
   }
 
@@ -415,21 +410,21 @@ details[open] .content-first-page__excerpt {
     display: none;
   }
 
-  .menu__icon-repair {
+  .menu__icon-repair--block--4 {
     right: 191px;
   }
 
-  .menu__icon-repair::before {
+  .menu__icon-repair--block--4::before {
     position: relative;
     content: 'Оставить заявку';
     right: 44px;
   }
-  
-  .menu__icon-check-status {
+
+  .menu__icon-check-status--block--4 {
     right: 31px;
   }
-  
-  .menu__icon-check-status::before {
+
+  .menu__icon-check-status--block--4::before {
     position: relative;
     content: 'Статус ремонта';
     right: 44px;
@@ -446,7 +441,7 @@ details[open] .content-first-page__excerpt {
   .site-navigation-list {
     margin-left: 25px;
   }
-  
+
   .site-navigation-list__items {
     overflow: hidden;
     flex-wrap: wrap;
@@ -458,6 +453,7 @@ details[open] .content-first-page__excerpt {
 
   .content-first-page__container-excerpt {
     justify-content: flex-start;
+    margin-top: 13px;
   }
 
   .content-first-page__container-img {
@@ -466,7 +462,6 @@ details[open] .content-first-page__excerpt {
 
   .content-first-page__excerpt {
     margin-left: 35px;
-    margin-top: 2px;
     letter-spacing: 0.1px;
     max-width: 88%;
   }
@@ -482,4 +477,127 @@ details[open] .content-first-page__excerpt {
   .content-first-page__signboard-photo {
     border-radius: 6px;
   }
+}
+
+/*********************** Block 1.4 mobile-menu ***********************/
+
+.html--block--5 {
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.body--block--5 {
+  height: 100%;
+}
+
+.wrapper--block--5 {
+  width: 320px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+}
+
+.main--block--5 {
+  flex: 1 1 auto;
+  margin-top: 35px;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.mobile-menu__close {
+  background: url('images/decorate/css_sprites.png') -79px -37px;
+}
+
+.menu__logo--block--5 {
+  position: relative;
+  top: 1px;
+  right: 43px;
+}
+
+.mobile-menu__search {
+  position: relative;
+  right: 24px;
+  background: url('images/decorate/css_sprites.png') -38px -39px;
+}
+
+.mobile-menu-navigation__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-navigation__items li {
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  padding: 16px;
+  padding-left: 0;
+}
+
+.mobile-menu-navigation__item-equipment-repair--active::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  height: 32px;
+  width: 4px;
+  background: #41f6d7;
+  border-radius: 0 4px 4px 0;
+}
+
+.mobile-menu-navigation__item-equipment-repair--active {
+  position: relative;
+  color: #7e7e82;
+}
+
+.footer--block--5 {
+  margin-bottom: 26px;
+}
+
+.footer-menu--block--5 {
+  display: flex;
+}
+
+.footer-menu--block--5 li {
+  margin-right: 16px;
+}
+
+.contacts--block--5 a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.contacts__tel {
+  font-family: 'TT Lakes Condensed';
+  font-size: 24px;
+  letter-spacing: 1.3px;
+}
+.languages {
+  margin-top: 41px;
+}
+
+.languages__list--block--5 {
+  display: flex;
+}
+
+.languages__list--block--5 li {
+  margin-right: 8px;
+}
+
+.languages__RU--active {
+  color: #7e7e82;
+}
+
+.html--block--5 button:hover,
+.html--block--5 button:focus {
+  transition: 1s linear;
+  opacity: 0.3;
 }
