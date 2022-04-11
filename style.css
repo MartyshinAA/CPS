@@ -250,9 +250,6 @@ details[open] .content-first-page__excerpt {
   letter-spacing: -0.3px;
 }
 
-.content-first-page__img-read-less {
-}
-
 .content-first-page__text-read-less:before {
   content: 'Свернуть';
   margin-left: 15px;
